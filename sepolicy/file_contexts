@@ -211,3 +211,6 @@
 # USB
 /sys/devices/virtual/host_notify/usb_otg(/.*)?    u:object_r:sysfs_usb_otg:s0
 /sys/devices/virtual/usb_notify/usb_control(/.*)? u:object_r:sysfs_usb_otg:s0
+
+/vendor/bin/netmgrd    u:object_r:vendor_netmgrd_exec:s0
+
