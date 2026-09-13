@@ -147,3 +147,10 @@ persist.sys.wfd.virtual=0
 
 # Zygote
 zygote.critical_window.minute=10
+
+# Dex2oat compiler optimizations for Quad-Core
+ro.sys.fw.dex2oat_thread_count=4
+dalvik.vm.boot-dex2oat-threads=4
+dalvik.vm.dex2oat-threads=4
+dalvik.vm.dex2oat-filter=speed-profile
+
