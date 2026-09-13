@@ -17,6 +17,8 @@
 
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
+PRODUCT_SOONG_NAMESPACES += device/samsung/gts3l-common
+
 BOARD_VENDOR := samsung
 
 COMMON_PATH := device/samsung/gts3l-common
