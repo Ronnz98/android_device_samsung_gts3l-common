@@ -127,6 +127,9 @@ PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
+BOARD_PROVIDES_LIBLIGHT:=true 
+GLOBAL_REMOVED_DL_INFO:=true
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 79691776
 BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
@@ -170,6 +173,12 @@ TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# RIL
+BOARD_PROVIDES_RILD := true
+TARGET_PROVIDES_RIL_SERVICE := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /vendor/bin/hw/rild=26
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-03-01
 
@@ -183,7 +192,8 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so \
-    /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so
+    /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so \
+    /vendor/lib64/libsec-ril.so|libsecril_shim.so:libprotobuf-cpp-full.so:libcutils.so
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
