@@ -93,6 +93,9 @@ function blob_fixup() {
     lib64/libpixelflinger.so)
         "${PATCHELF}" --replace-needed "libcutils.so" "libcutils-v29.so" "${2}"
         ;;
+    vendor/lib/libsec-ril.so|vendor/lib64/libsec-ril.so)
+        "${PATCHELF}" --add-needed "libsecril_shim.so" "${2}"
+        ;;
     esac
 }
 
