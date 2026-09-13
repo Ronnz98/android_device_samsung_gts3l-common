@@ -15,6 +15,8 @@
 # limitations under the License.
 #
 
+-include vendor/lineage-priv/keys/keys.mk
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n.mk)
 
 # Get non-open-source specific aspects
@@ -140,6 +142,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/camera/msm8996_camera_gts3.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/msm8996_camera_gts3.xml \
     $(LOCAL_PATH)/camera/N05QL_s5k5e3yx_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/N05QL_s5k5e3yx_chromatix.xml \
     $(LOCAL_PATH)/camera/W13QS_imx258_chromatix.xml:$(TARGET_COPY_OUT_VENDOR)/firmware/W13QS_imx258_chromatix.xml
+
+# CarrierConfig
+PRODUCT_PACKAGES += \
+    CarrierConfig
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -337,6 +343,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
+# RIL Shims
+PRODUCT_PACKAGES += \
+    libsecril_shim
+
 # Seccomp policy
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy \
@@ -395,11 +405,6 @@ PRODUCT_PACKAGES += \
 # VNDK
 PRODUCT_PACKAGES += \
     vndk-sp
-
-PRODUCT_COPY_FILES += \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-sp/libcutils.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libcutils-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm-armv8-a/shared/vndk-core/libprotobuf-cpp-lite.so:$(TARGET_COPY_OUT_VENDOR)/lib/libprotobuf-cpp-lite-v29.so \
-    prebuilts/vndk/v29/arm64/arch-arm64-armv8-a/shared/vndk-core/libprotobuf-cpp-full.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libprotobuf-cpp-full-v29.so
 
 # WiFi
 PRODUCT_PACKAGES += \
