@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := false
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 PRODUCT_SOONG_NAMESPACES += device/samsung/gts3l-common
 
@@ -125,9 +125,13 @@ TARGET_ENABLE_MEDIADRM_64 := true
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # HIDL
-PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := false
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
+
+# HIDL for Legacy RIL
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
+
 
 BOARD_PROVIDES_LIBLIGHT:=true 
 GLOBAL_REMOVED_DL_INFO:=true
@@ -195,7 +199,7 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so \
     /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so \
-    /vendor/lib64/libsec-ril.so|libsecril_shim.so:libprotobuf-cpp-full.so:libcutils.so
+    /vendor/lib64/libsec-ril.so|libsecril_shim.so:libutils.so:libcutils.so
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
