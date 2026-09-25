@@ -77,7 +77,9 @@ persist.data.dropssdp=false
 persist.data.iwlan.enable=true
 persist.data.mode=concurrent
 persist.data.netmgrd.qos.enable=true
+persist.vendor.data.mode=concurrent
 ro.use_data_netmgrd=true
+ro.vendor.use_data_netmgrd=true
 
 # Dalvik
 dalvik.vm.heapminfree=512k
