@@ -22,3 +22,4 @@ libsomp.camera.samsung.so
 libsomp.so
 libvideoeditor_O_zf.so 64
 libvideoeditor_jni_O_zf.so 64
+libsecril_shim.so
