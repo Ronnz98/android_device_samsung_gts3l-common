@@ -94,6 +94,8 @@ function blob_fixup() {
         "${PATCHELF}" --replace-needed "libcutils.so" "libcutils-v29.so" "${2}"
         ;;
     vendor/lib/libsec-ril.so|vendor/lib64/libsec-ril.so)
+        "${PATCHELF}" --remove-needed "libhidltransport.so" "${2}"
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         "${PATCHELF}" --add-needed "libsecril_shim.so" "${2}"
         ;;
     esac
