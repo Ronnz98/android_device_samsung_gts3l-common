@@ -58,83 +58,11 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
 
-[system/bin/cnss-daemon]
+[vendor/bin/cnss-daemon]
 mode: 0755
 user: AID_BLUETOOTH
 group: AID_BLUETOOTH
 caps: NET_BIND_SERVICE
-
-[system/bin/pd-mapper]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[system/bin/pm-service]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/cnd]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE NET_ADMIN BLOCK_SUSPEND
-
-[system/vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_ADMIN BLOCK_SUSPEND
-
-[system/vendor/bin/ims_rtp_daemon]
-mode: 0755
-user: AID_SYSTEM
-group: AID_RADIO
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/imsdatadaemon]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/imsrcsd]
-mode: 0755
-user: AID_SYSTEM
-group: AID_RADIO
-caps: NET_BIND_SERVICE WAKE_ALARM BLOCK_SUSPEND
-
-[system/vendor/bin/loc_launcher]
-mode: 0755
-user: AID_GPS
-group: AID_GPS
-caps: SETGID SETUID
-
-[system/vendor/bin/pd-mapper]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/pm-service]
-mode: 0755
-user: AID_SYSTEM
-group: AID_SYSTEM
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/slim_daemon]
-mode: 0755
-user: AID_GPS
-group: AID_GPS
-caps: NET_BIND_SERVICE
-
-[system/vendor/bin/wcnss_filter]
-mode: 0755
-user: AID_BLUETOOTH
-group: AID_BLUETOOTH
-caps: BLOCK_SUSPEND
 
 [vendor/bin/cnd]
 mode: 0755
@@ -213,3 +141,10 @@ mode: 0775
 user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
+
+# Zwingend erforderlich für Android 13 RIL-Funktionalität
+[vendor/bin/hw/rild]
+mode: 0755
+user: AID_RADIO
+group: AID_RADIO
+caps: NET_ADMIN NET_RAW BLOCK_SUSPEND
