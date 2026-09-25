@@ -15,11 +15,16 @@
 # limitations under the License.
 #
 
+PRODUCT_SOONG_NAMESPACES += device/samsung/gts3l-common
+
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 BOARD_VENDOR := samsung
 
 COMMON_PATH := device/samsung/gts3l-common
+
+BOARD_PROVIDES_LIBLIGHT:=true 
+GLOBAL_REMOVED_DL_INFO:=true
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
@@ -170,6 +175,14 @@ TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
+# RIL & Telephony Configuration for Android 13
+BOARD_PROVIDES_LIBRIL := true
+ENABLE_VENDOR_RIL_SERVICE := true
+
+# RIL-Daemon fot Android 8.0 Compat (API 26)
+TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
+    /vendor/bin/hw/rild=26
+
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-03-01
 
@@ -183,7 +196,8 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so \
-    /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so
+    /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so \
+    /vendor/lib64/libsec-ril.so|libsecril_shim.so:libprotobuf-cpp-full.so:libcutils.so
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
