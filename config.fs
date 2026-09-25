@@ -142,7 +142,7 @@ user: AID_SYSTEM
 group: AID_SYSTEM
 caps: 0
 
-# Zwingend erforderlich für Android 13 RIL-Funktionalität
+# RIL A13
 [vendor/bin/hw/rild]
 mode: 0755
 user: AID_RADIO
