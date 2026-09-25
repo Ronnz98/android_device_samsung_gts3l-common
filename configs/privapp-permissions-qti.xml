@@ -114,4 +114,25 @@ It allows additional grants on top of privapp-permissions-platform.xml
         <permission name="android.permission.INTERACT_ACROSS_USERS"/>
     </privapp-permissions>
 
+    <!-- com.android.phone -->
+    <privapp-permissions package="com.android.phone">
+        <permission name="android.permission.BIND_CARRIER_SERVICES"/>
+        <permission name="android.permission.BIND_IMS_SERVICE"/>
+        <permission name="android.permission.BIND_TELEPHONY_DATA_SERVICE"/>
+        <permission name="android.permission.BIND_TELEPHONY_NETWORK_SERVICE"/>
+        <permission name="android.permission.CONNECTIVITY_INTERNAL"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.STATUS_BAR"/>
+        <permission name="android.permission.WRITE_EMBEDDED_SUBSCRIPTIONS"/>
+        <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+        <permission name="android.permission.INTERACT_ACROSS_USERS"/>
+    </privapp-permissions>
+  
+    <!-- com.android.carrierconfig -->
+    <privapp-permissions package="com.android.carrierconfig">
+        <permission name="android.permission.BIND_CARRIER_SERVICES"/>
+        <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+    </privapp-permissions>
+
 </permissions>
