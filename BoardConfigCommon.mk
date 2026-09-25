@@ -197,7 +197,7 @@ TARGET_LD_SHIM_LIBS := \
     /vendor/lib64/libbauthserver.so|libbauthtzcommon_shim.so \
     /vendor/lib/hw/audio.primary.msm8996.so|libaudioprimary_shim.so \
     /vendor/lib/hw/camera.msm8996.so|libshims_cameraclient.so \
-    /vendor/lib64/libsec-ril.so|libsecril_shim.so:libprotobuf-cpp-full.so:libcutils.so
+    /vendor/lib64/libsec-ril.so|libsecril_shim.so
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI := true
