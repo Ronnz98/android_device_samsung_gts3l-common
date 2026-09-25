@@ -22,3 +22,10 @@ allow rild radio_core_data_file:file { create open setattr write };
 allow rild system_prop:file { getattr open read };
 
 get_prop(rild, csc_prop)
+
+allow rild radio_service:service_manager find;
+allow rild hal_audio_default:dir search;
+allow rild hal_audio_default:file { read open };
+set_prop(rild, net_radio_prop)
+get_prop(rild, vendor_radio_prop)
+allow rild vendor_file:file { execute read open getattr };
