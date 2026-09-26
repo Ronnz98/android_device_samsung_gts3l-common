@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <sys/types.h>
+#include <new> 
 
 namespace android {
     class MemoryDealer {
