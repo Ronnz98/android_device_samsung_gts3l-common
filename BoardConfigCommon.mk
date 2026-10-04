@@ -26,6 +26,8 @@ COMMON_PATH := device/samsung/gts3l-common
 BOARD_PROVIDES_LIBLIGHT:=true 
 GLOBAL_REMOVED_DL_INFO:=true
 
+BOARD_USES_LEGACY_NETD_BPF := true
+
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
