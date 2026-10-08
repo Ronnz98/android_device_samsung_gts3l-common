@@ -152,7 +152,7 @@ zygote.critical_window.minute=10
 persist.sys.usb.config=adb
 persist.service.adb.enable=1
 persist.service.debug_gee=1
-ro.adb.secure=0
+#ro.adb.secure=0
 ro.debuggable=1
 
 
