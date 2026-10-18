@@ -44,6 +44,10 @@ PRODUCT_CHARACTERISTICS := tablet
 # Exclude AudioFX
 TARGET_EXCLUDES_AUDIOFX := true
 
+# APN-Datenbank über das neue vendor_apn Modul einbinden
+PRODUCT_PACKAGES += \
+    apns-conf.xml
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
