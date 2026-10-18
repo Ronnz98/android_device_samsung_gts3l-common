@@ -520,8 +520,10 @@ service vendor.qmuxd /system/vendor/bin/qmuxd
     group radio audio bluetooth gps nfc diag
     disabled
 
-service vendor.netmgrd /system/vendor/bin/netmgrd
+service vendor.netmgrd /vendor/bin/netmgrd
     class main
+    user root 
+    group radio audio bluetooth gps nfc diag inet net_admin net_raw wakelock oem_2901 
     disabled
 
 #service vendor.ipacm-diag /system/vendor/bin/ipacm-diag
