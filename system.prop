@@ -154,5 +154,3 @@ persist.service.adb.enable=1
 persist.service.debug_gee=1
 #ro.adb.secure=0
 ro.debuggable=1
-
-
