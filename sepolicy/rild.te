@@ -1,3 +1,4 @@
+set_prop(rild, vendor_radio_prop)
 allow rild self:tun_socket create;
 
 allow rild tun_device:chr_file rw_file_perms;
@@ -8,13 +9,15 @@ allow rild proc_net:file write;
 allow rild app_efs_file:file { getattr open read };
 
 allow rild default_android_hwservice:hwservice_manager add;
-allow rild default_prop:property_service set;
+#allow rild default_prop:property_service set;
 allow rild default_prop:file { getattr open read };
 
 allow rild imei_efs_file:file { open read setattr getattr write };
 
-allow rild system_data_file:dir { write add_name };
-allow rild system_data_file:file { create open write setattr };
+#allow rild system_data_file:dir { write add_name };
+#allow rild system_data_file:file { create open write setattr };
+allow rild vendor_radio_data_file:dir rw_dir_perms;
+allow rild vendor_radio_data_file:file create_file_perms;
 
 allow rild radio_core_data_file:dir { add_name write };
 allow rild radio_core_data_file:file { create open setattr write };
@@ -29,3 +32,11 @@ allow rild hal_audio_default:file { read open };
 set_prop(rild, net_radio_prop)
 get_prop(rild, vendor_radio_prop)
 allow rild vendor_file:file { execute read open getattr };
+
+set_prop(rild, vendor_netmgr_config_prop)
+get_prop(rild, vendor_netmgr_config_prop)
+
+ allow rild qmuxd_socket:dir w_dir_perms;
+ allow rild qmuxd_socket:sock_file create_file_perms;
+
+ allow rild self:capability { setuid setgid net_admin net_raw };
