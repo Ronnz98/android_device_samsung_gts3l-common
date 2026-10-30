@@ -15,3 +15,6 @@ allow netmgrd self:udp_socket create_socket_perms_no_ioctl;
 allow netmgrd sysfs_net:dir search;
 allow netmgrd sysfs_net:file rw_file_perms;
 allow netmgrd vendor_toolbox_exec:file rx_file_perms;
+
+get_prop(vendor_netmgrd, vendor_netmgr_config_prop)
+allow vendor_netmgrd self:capability { net_admin net_raw };
