@@ -156,3 +156,8 @@ persist.service.debug_gee=1
 ro.debuggable=1
 
 
+# RIL Single SIM Enforcement
+ro.multisim.config=ss
+persist.radio.multisim.config=ss
+ro.telephony.default_network=9
+telephony.lteOnGsmDevice=1
