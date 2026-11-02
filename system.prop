@@ -72,13 +72,6 @@ ro.soc.model=MSM8996
 # Gatekeeper
 ro.hardware.gatekeeper=mdfpp
 
-# Data modules
-persist.data.dropssdp=false
-persist.data.iwlan.enable=true
-persist.data.mode=concurrent
-persist.data.netmgrd.qos.enable=false
-#persist.vendor.data.mode=concurrent
-
 # Dalvik
 dalvik.vm.heapminfree=512k
 dalvik.vm.heapstartsize=8m
