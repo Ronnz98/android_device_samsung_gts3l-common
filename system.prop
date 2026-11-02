@@ -54,8 +54,8 @@ bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 
 # BPF
-ro.kernel.ebpf.supported=false
-bpf.progs_loaded=1
+#ro.kernel.ebpf.supported=false
+#bpf.progs_loaded=1
 
 # Camera
 camera.disable_zsl_mode=1
@@ -77,7 +77,7 @@ persist.data.dropssdp=false
 persist.data.iwlan.enable=true
 persist.data.mode=concurrent
 persist.data.netmgrd.qos.enable=false
-persist.vendor.data.mode=concurrent
+#persist.vendor.data.mode=concurrent
 
 # Dalvik
 dalvik.vm.heapminfree=512k
@@ -152,10 +152,3 @@ persist.service.adb.enable=1
 persist.service.debug_gee=1
 #ro.adb.secure=0
 ro.debuggable=1
-
-
-# RIL Single SIM Enforcement
-ro.multisim.config=ss
-persist.radio.multisim.config=ss
-ro.telephony.default_network=9
-telephony.lteOnGsmDevice=1
