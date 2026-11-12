@@ -520,11 +520,11 @@ service qmiproxy /system/bin/qmiproxy
 #    group radio audio bluetooth gps nfc diag
 #    disabled
 
-service vendor.netmgrd /vendor/bin/netmgrd
-    class main
-    user root 
-    group radio audio bluetooth gps nfc diag inet net_admin net_raw wakelock oem_2901 
-    disabled
+#service vendor.netmgrd /vendor/bin/netmgrd
+#   class main
+#   user root 
+#    group radio audio bluetooth gps nfc diag inet net_admin net_raw wakelock oem_2901 
+#   disabled
 
 #service vendor.ipacm-diag /vendor/bin/ipacm-diag
 #    class main
