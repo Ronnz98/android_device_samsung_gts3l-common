@@ -153,7 +153,8 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/firmware-modem:/firmware-modem \
     /vendor/firmware_mnt:/firmware \
     /vendor/bt_firmware:/bt_firmware \
-    /mnt/vendor/persist:/persist
+    /mnt/vendor/persist:/persist \
+    /efs:/efs 
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := efs
@@ -187,7 +188,7 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # RIL-Daemon fot Android 8.0 Compat (API 26)
 TARGET_PROCESS_SDK_VERSION_OVERRIDE += \
-    /vendor/bin/hw/rild=26
+    /vendor/bin/hw/rild=28
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2020-03-01
