@@ -408,10 +408,8 @@
         </interface>
     </hal>
     <hal format="aidl">
-    <name>android.system.suspend</name>
-    <interface>
-        <name>ISystemSuspend</name>
-        <instance>default</instance>
-    </interface>
-</hal>
+        <name>android.system.suspend</name>
+        <version>1</version>
+        <fqname>ISystemSuspend/default</fqname>
+    </hal>
 </manifest>
