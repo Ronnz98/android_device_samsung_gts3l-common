@@ -407,4 +407,11 @@
             <instance>miscpower</instance>
         </interface>
     </hal>
+    <hal format="aidl">
+    <name>android.system.suspend</name>
+    <interface>
+        <name>ISystemSuspend</name>
+        <instance>default</instance>
+    </interface>
+</hal>
 </manifest>
